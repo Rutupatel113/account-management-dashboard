@@ -1,16 +1,52 @@
-# React + Vite
+# Account Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.2-teal?logo=tailwind-css)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
 
-Currently, two official plugins are available:
+A **modern and secure Account Management System** built with **React**, **React Router**, and **Tailwind CSS**. This web app allows users to **register, log in, and manage their profile information** easily, storing user data in the browser's `localStorage`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔒 **Secure Authentication** – Sign up and sign in with stored credentials.
+- 👤 **Profile Management** – View and edit your name, password, and bio.
+- 👥 **Quick Sign Up** – Easy registration process with instant feedback.
+- 📱 **Responsive Design** – Tailwind CSS ensures a modern, responsive UI.
+- 🔄 **Client-side Routing** – Seamless navigation using React Router.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖥️ Pages Overview
+
+### Landing Page
+- Welcome message and app description.
+- Buttons to **Sign In** or **Sign Up**.
+- Highlights key features of the system.
+
+### Register Page
+- Create a new account.
+- Store user information in `localStorage`.
+- Redirect to Login after successful registration.
+
+### Login Page
+- Sign in with registered credentials.
+- Validates user input and redirects to Profile on success.
+
+### Profile Page
+- View and edit profile information: **Name, Password, Bio**.
+- **Email** is fixed and cannot be changed.
+- Logout functionality clears session and redirects to Login.
+
+---
+
+## 🛠️ Technologies Used
+
+- **React.js** – Frontend framework for building dynamic UI.
+- **React Router** – Client-side routing.
+- **Tailwind CSS** – Utility-first CSS framework for styling.
+- **Local Storage** – Store user data on the client-side.
+
+---
+
