@@ -20,11 +20,15 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6">
-      <h2 className="text-4xl font-bold text-cyan-600">Welcome Back</h2>
-      <p className="text-gray-600 mt-1">Sign in to your account</p>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6">
+      <h2 className="text-3xl sm:text-4xl font-bold text-cyan-600 text-center">
+        Welcome Back
+      </h2>
+      <p className="text-gray-600 mt-1 text-sm sm:text-base text-center">
+        Sign in to your account
+      </p>
 
-      <div className="mt-8 w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
+      <div className="mt-8 w-full max-w-sm sm:max-w-md bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
         <input
           type="email"
           placeholder="you@example.com"

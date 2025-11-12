@@ -15,11 +15,15 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6">
-      <h2 className="text-4xl font-bold text-cyan-600">Create Account</h2>
-      <p className="text-gray-600 mt-1">Join us and manage your account easily</p>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6">
+      <h2 className="text-3xl sm:text-4xl font-bold text-cyan-600 text-center">
+        Create Account
+      </h2>
+      <p className="text-gray-600 mt-1 text-sm sm:text-base text-center">
+        Join us and manage your account easily
+      </p>
 
-      <div className="mt-8 w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
+      <div className="mt-8 w-full max-w-sm sm:max-w-md bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
         <input
           type="text"
           placeholder="Your Name"
@@ -49,7 +53,9 @@ export default function Register() {
         </button>
         <p className="text-center text-gray-600 mt-4">
           Already have an account?
-          <Link className="text-blue-600 ml-1" to="/login">Sign in</Link>
+          <Link className="text-blue-600 ml-1" to="/login">
+            Sign in
+          </Link>
         </p>
       </div>
     </div>

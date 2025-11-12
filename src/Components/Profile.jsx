@@ -4,11 +4,10 @@ import { useNavigate } from "react-router-dom";
 export default function Profile() {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const [name, setName] = useState(storedUser?.name || "");
-  const [email, setEmail] = useState(storedUser?.email || "");
+  const [email] = useState(storedUser?.email || "");
   const [password, setPassword] = useState(storedUser?.password || "");
   const [bio, setBio] = useState(storedUser?.bio || "");
   const [isEditing, setIsEditing] = useState(false);
-
   const navigate = useNavigate();
 
   const handleUpdate = () => {
@@ -18,26 +17,29 @@ export default function Profile() {
     setIsEditing(false);
   };
 
- const handleLogout = () => {
-  localStorage.removeItem("isLoggedIn");
-  navigate("/login");
-};
-
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    navigate("/login");
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 px-6 py-10">
-      {/* Header */}
-      <h1 className="text-4xl font-bold text-cyan-500 mb-10 flex justify-center">My Account</h1>
+    <div className="min-h-screen bg-gray-50 px-4 sm:px-6 py-10">
+      <h1 className="text-3xl sm:text-4xl font-bold text-cyan-500 mb-8 text-center">
+        My Account
+      </h1>
 
-      {/* Profile Header Section */}
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow p-6 flex items-center justify-between">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-4">
-          <div className="w-20 h-20 rounded-full  flex items-center justify-center text-white text-2xl font-bold">
+          <div className="w-20 h-20 rounded-full bg-cyan-500 flex items-center justify-center text-white text-2xl font-bold">
             {name ? name.charAt(0).toUpperCase() : "U"}
           </div>
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800">{name || "User Name"}</h2>
-            <p className="text-gray-500">{email || "user@example.com"}</p>
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">
+              {name || "User Name"}
+            </h2>
+            <p className="text-gray-500 text-sm sm:text-base">
+              {email || "user@example.com"}
+            </p>
           </div>
         </div>
 
@@ -49,19 +51,15 @@ export default function Profile() {
         </button>
       </div>
 
-      {/* Profile Info Section */}
-      <div className="max-w-4xl mx-auto mt-8 bg-white rounded-2xl shadow p-8">
-        <div className="flex justify-between items-center mb-6">
+      <div className="max-w-4xl mx-auto mt-8 bg-white rounded-2xl shadow p-6 sm:p-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3">
           <div>
-            <h3 className="text-xl font-semibold text-gray-800">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
               Profile Information
             </h3>
-            <p className="text-gray-500 text-sm">
-              Update your personal details
-            </p>
+            <p className="text-gray-500 text-sm">Update your personal details</p>
           </div>
 
-          {/* Conditional Buttons */}
           {isEditing ? (
             <button
               onClick={handleUpdate}
@@ -80,11 +78,8 @@ export default function Profile() {
         </div>
 
         <div className="space-y-4">
-          {/* Full Name */}
           <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Full Name
-            </label>
+            <label className="block text-gray-700 font-medium mb-1">Full Name</label>
             <input
               type="text"
               value={name}
@@ -98,27 +93,19 @@ export default function Profile() {
             />
           </div>
 
-          {/* Email */}
           <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Email
-            </label>
+            <label className="block text-gray-700 font-medium mb-1">Email</label>
             <input
               type="email"
               value={email}
               disabled
               className="w-full p-3 rounded-lg border bg-gray-100 text-gray-500 cursor-not-allowed"
             />
-            <p className="text-sm text-gray-400 mt-1">
-              Email cannot be changed
-            </p>
+            <p className="text-sm text-gray-400 mt-1">Email cannot be changed</p>
           </div>
 
-          {/* Password */}
           <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Password
-            </label>
+            <label className="block text-gray-700 font-medium mb-1">Password</label>
             <input
               type="password"
               value={password}
@@ -132,7 +119,6 @@ export default function Profile() {
             />
           </div>
 
-          {/* Bio */}
           <div>
             <label className="block text-gray-700 font-medium mb-1">Bio</label>
             <textarea
