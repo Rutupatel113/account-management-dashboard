@@ -27,7 +27,7 @@ export default function Profile() {
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
       {/* Header */}
-      <h1 className="text-4xl font-bold text-cyan-500 mb-10">My Account</h1>
+      <h1 className="text-4xl font-bold text-cyan-500 mb-10 flex justify-center">My Account</h1>
 
       {/* Profile Header Section */}
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow p-6 flex items-center justify-between">
