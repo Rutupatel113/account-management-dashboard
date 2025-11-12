@@ -9,8 +9,10 @@ export default function Login() {
   const handleLogin = () => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     if (!storedUser) return alert("No account found. Please register.");
+
     if (email === storedUser.email && password === storedUser.password) {
       alert("Login successful!");
+      localStorage.setItem("isLoggedIn", true);
       navigate("/profile");
     } else {
       alert("Invalid credentials");
@@ -45,7 +47,9 @@ export default function Login() {
         </button>
         <p className="text-center text-gray-600 mt-4">
           Don't have an account?
-          <Link className="text-blue-600 ml-1" to="/register">Sign up</Link>
+          <Link className="text-blue-600 ml-1" to="/register">
+            Sign up
+          </Link>
         </p>
       </div>
     </div>

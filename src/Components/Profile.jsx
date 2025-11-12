@@ -18,10 +18,11 @@ export default function Profile() {
     setIsEditing(false);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    navigate("/login");
-  };
+ const handleLogout = () => {
+  localStorage.removeItem("isLoggedIn");
+  navigate("/login");
+};
+
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
